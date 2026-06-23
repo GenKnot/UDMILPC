@@ -1057,11 +1057,15 @@ h1 span { display: block; }
   .upCampusVisual { min-height: 450px; }
   .upCtaActions { align-items: flex-start; flex-direction: column; }
   .wuHero, .wuHeroGrid { min-height: 680px; }
-  .wuFourGrid, .wuDisciplineGrid, .wuLanguageGrid, .wuResearchGrid, .wuFiveGrid, .wuJourneyGrid, .wuSkillMatrix { grid-template-columns: 1fr; }
+  .wuFourGrid, .wuDisciplineGrid, .wuLanguageGrid, .wuResearchGrid, .wuFiveGrid, .wuJourneyGrid, .wuSkillMatrix, .wuJourneyRail { grid-template-columns: 1fr; }
   .wuFourGrid article, .wuLanguageGrid article, .wuResearchGrid article, .wuFiveGrid article, .wuJourneyGrid article, .wuSkillMatrix article { min-height: 255px; }
   .wuSkillMatrix article:first-child { grid-row: auto; }
   .wuSkillMatrix article:first-child h3 { margin-top: 52px; font-size: 30px; }
-  .wuJourneyRail article { grid-template-columns: 1fr; gap: 12px; }
+  .wuJourneyRail { padding-top: 0; border-top: 0; }
+  .wuJourneyRail::before { display: none; }
+  .wuJourneyRail article { min-height: auto; padding: 28px 0; border-top: 1px solid var(--line); }
+  .wuJourneyRail article::before { top: 24px; }
+  .wuJourneyRail span { margin: 0 0 28px 38px; }
   .wuCtaActions { align-items: flex-start; flex-direction: column; }
   .wuMotto { flex-direction: column; }
   .wuMotto span::after { display: none; }
