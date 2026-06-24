@@ -9,7 +9,6 @@ import type { Locale, SiteContent } from "@/content/site-content";
 const languageLinks: Array<{ locale: Locale; label: string }> = [
   { locale: "en", label: "EN" },
   { locale: "fr", label: "FR" },
-  { locale: "zh", label: "中文" },
 ];
 
 export function SiteHeader({ locale, content }: { locale: Locale; content: SiteContent["header"] }) {
@@ -35,7 +34,7 @@ export function SiteHeader({ locale, content }: { locale: Locale; content: SiteC
                   aria-current={language.locale === locale ? "page" : undefined}
                   className={language.locale === locale ? "active" : undefined}
                   href={switchLocale(language.locale)}
-                  hrefLang={language.locale === "zh" ? "zh-Hans" : language.locale}
+                  hrefLang={language.locale}
                   key={language.locale}
                 >{language.label}</Link>
               ))}

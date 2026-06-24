@@ -420,19 +420,35 @@ h1 span { display: block; }
 /* Expanded client-review homepage */
 .heroHighlights { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 28px; color: rgba(255,255,255,.62); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .heroHighlights span::before { content: "•"; margin-right: 10px; color: #87b7f1; }
-.authorityBanner { padding: 70px 0 0; color: white; background: var(--blue); }
-.authorityIntro { display: grid; grid-template-columns: 1fr; padding-bottom: 55px; }
-.authorityIntro > div { display: grid; grid-template-columns: .55fr 1.4fr 1fr; gap: 55px; align-items: start; }
-.authoritySince { margin: 7px 0 0; font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
-.authorityIntro h2 { margin: 0; font-size: clamp(36px, 4vw, 56px); line-height: 1.04; }
-.authorityIntro h2 + p { color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.75; }
-.authorityFacts { display: grid; grid-template-columns: 1.35fr 1fr 1fr 1fr; gap: 1px; border-top: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.18); }
-.authorityFacts div { min-height: 142px; padding: 28px; background: var(--blue); }
-.authorityFacts div:first-child { background: rgba(255,255,255,.08); }
+.authorityBanner { padding: 82px 0 0; color: var(--ink); background: var(--paper); }
+.authorityIntro { display: grid; grid-template-columns: 1fr; padding-bottom: 58px; }
+.authorityIntro > div { display: grid; grid-template-columns: .36fr 1.18fr .82fr; gap: 64px; align-items: center; }
+.authoritySince { margin: 7px 0 0; color: var(--blue); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.authorityIntro h2 { max-width: 660px; margin: 0; color: var(--ink); font-size: clamp(34px, 3.15vw, 46px); line-height: 1.18; }
+.authorityIntro h2 + p { max-width: 430px; color: var(--ink-soft); font-size: 16px; line-height: 1.78; }
+.authorityFacts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); border-left: 1px solid var(--line); background: white; }
+.authorityFacts div { min-height: 150px; padding: 30px 28px; border-right: 1px solid var(--line); background: white; }
+.authorityFacts div:last-child { border-right: 0; }
+.authorityFacts div:first-child { color: var(--ink); background: white; }
 .authorityFacts strong, .authorityFacts span { display: block; }
 .authorityFacts strong { margin-bottom: 15px; font-family: var(--serif); font-size: 34px; font-weight: 500; }
-.authorityFacts div:first-child strong { font-size: clamp(48px, 5.2vw, 72px); line-height: .85; letter-spacing: -.05em; }
-.authorityFacts span { color: rgba(255,255,255,.68); font-size: 9px; letter-spacing: .09em; text-transform: uppercase; }
+.authorityFacts div:first-child strong { font-size: 34px; line-height: 1; letter-spacing: 0; }
+.authorityFacts span { color: var(--ink-soft); font-size: 9px; letter-spacing: .09em; text-transform: uppercase; }
+.authorityFacts div:first-child span { color: var(--ink-soft); }
+.homePhotoStory { padding: 118px 0; color: white; background: var(--navy); }
+.homePhotoStoryGrid { display: grid; grid-template-columns: .62fr 1.38fr; gap: 78px; align-items: center; }
+.homePhotoStory h2 { max-width: 520px; margin: 0; font-size: clamp(36px, 4vw, 58px); line-height: 1.14; }
+.homePhotoMosaic { display: grid; grid-template-columns: 1.08fr .92fr; grid-template-rows: 250px 250px; gap: 16px; }
+.homePhotoTile { position: relative; min-height: 250px; margin: 0; overflow: hidden; background: #17334f; }
+.homePhotoTile1 { grid-row: span 2; }
+.homePhotoTile1 { background: linear-gradient(180deg,rgba(3,22,43,.04),rgba(3,22,43,.58)),url('/M/inside 1.jpg') center/cover no-repeat; }
+.homePhotoTile2 { background: linear-gradient(180deg,rgba(3,22,43,.04),rgba(3,22,43,.58)),url('/M/people 3.jpg') center/cover no-repeat; }
+.homePhotoTile3 { background: linear-gradient(180deg,rgba(3,22,43,.04),rgba(3,22,43,.58)),url('/M/building 18.jpg') center/cover no-repeat; }
+.homePhotoTile img { object-fit: cover; transition: transform .7s ease; }
+.homePhotoTile:hover img { transform: scale(1.035); }
+.homePhotoTile::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(3,18,35,.82)); pointer-events: none; }
+.homePhotoTile figcaption { position: absolute; z-index: 1; right: 22px; bottom: 20px; left: 22px; display: flex; justify-content: space-between; gap: 20px; align-items: center; color: white; font-size: 10px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+.homePhotoTile figcaption span { color: #9fc3f5; }
 .homeAbout { background: white; }
 .homeAboutGrid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 100px; }
 .homeAbout h2, .impactSection h2 { max-width: 780px; margin-bottom: 30px; font-size: clamp(46px, 5vw, 72px); line-height: 1; letter-spacing: -.04em; }
@@ -457,13 +473,46 @@ h1 span { display: block; }
 .homeFeatureGrid { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--line); }
 .homeFeatureGrid article { min-height: 330px; padding: 30px 24px; border-right: 1px solid var(--line); }
 .homeFeatureGrid article:first-child { border-left: 1px solid var(--line); }
+.homeFeatureGrid article:nth-child(1),
+.homeFeatureGrid article:nth-child(3),
+.homeFeatureGrid article:nth-child(5) {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background-position: center;
+  background-size: cover;
+}
+.homeFeatureGrid article:nth-child(1) { background-image: linear-gradient(180deg,rgba(3,22,43,.12),rgba(3,22,43,.88)),url('/M/ChatGPT Image Jun 21, 2026, 11_17_53 PM.png'); }
+.homeFeatureGrid article:nth-child(3) { background-image: linear-gradient(180deg,rgba(3,22,43,.14),rgba(3,22,43,.86)),url('/M/building 22.jpg'); }
+.homeFeatureGrid article:nth-child(5) { background-image: linear-gradient(180deg,rgba(3,22,43,.12),rgba(3,22,43,.88)),url('/M/inside 2.jpg'); }
+.homeFeatureGrid article:nth-child(1) > span,
+.homeFeatureGrid article:nth-child(3) > span,
+.homeFeatureGrid article:nth-child(5) > span { color: #9fc3f5; }
+.homeFeatureGrid article:nth-child(1) p,
+.homeFeatureGrid article:nth-child(3) p,
+.homeFeatureGrid article:nth-child(5) p { color: rgba(255,255,255,.72); }
 .homeFeatureGrid h3 { margin: 65px 0 18px; font-size: 25px; line-height: 1.1; }
 .homeFeatureGrid p, .preparationGrid p { color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
 .preparationSection { background: white; }
 .preparationGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .preparationGrid article { min-height: 290px; padding: 30px 24px; background: white; }
 .preparationGrid h3 { margin: 58px 0 16px; font-size: 26px; }
-.pathwaySection { background: var(--blue-dark); }
+.pathwaySection {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg,rgba(8,45,100,.88),rgba(8,45,100,.76)),
+    url('/M/building 7.jpg') center 42%/cover no-repeat;
+}
+.pathwaySection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .18;
+  background-image: linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
 .sixStepPathway { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 50px; border-top: 1px solid rgba(255,255,255,.2); border-left: 1px solid rgba(255,255,255,.2); }
 .sixStepPathway article { position: relative; min-height: 245px; padding: 28px; color: white; border-right: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
 .sixStepPathway article > span { color: #94bfee; font-size: 10px; font-weight: 800; }
@@ -491,6 +540,11 @@ h1 span { display: block; }
 .campusFeatureList h3 { margin-bottom: 9px; font-size: 23px; }
 .campusFeatureList p { margin: 0; color: var(--ink-soft); font-size: 12px; line-height: 1.65; }
 .homeSupport { background: var(--sky); }
+.homeSupportEditorial { display: grid; grid-template-columns: 1fr .72fr; gap: 0; align-items: stretch; margin: -15px 0 55px; background: white; box-shadow: 0 22px 58px rgba(15,39,67,.08); }
+.homeSupportEditorial figure { position: relative; min-height: 330px; margin: 0; overflow: hidden; }
+.homeSupportEditorial img { object-fit: cover; }
+.homeSupportEditorial > div { display: flex; flex-direction: column; justify-content: center; padding: clamp(32px, 5vw, 58px); }
+.homeSupportEditorial h3 { max-width: 520px; margin: 0; font-size: clamp(30px, 3vw, 44px); line-height: 1.16; }
 .supportGroupGrid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .supportGroupGrid article { min-height: 390px; padding: 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .supportGroupGrid article > span { color: var(--blue); font-size: 9px; font-weight: 800; }
@@ -509,7 +563,15 @@ h1 span { display: block; }
 .impactStats strong, .impactStats span { display: block; }
 .impactStats strong { margin-bottom: 38px; font-family: var(--serif); font-size: 44px; font-weight: 500; }
 .impactStats span { color: rgba(255,255,255,.58); font-size: 9px; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase; }
-.homeFinalCta { position: relative; overflow: hidden; padding: 120px 0; color: white; background: var(--blue); }
+.homeFinalCta {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  color: white;
+  background:
+    linear-gradient(90deg,rgba(21,79,168,.94),rgba(21,79,168,.86)),
+    url('/M/building 8.jpg') center 44%/cover no-repeat;
+}
 .homeFinalCta::after { content: "UdeM"; position: absolute; right: -25px; bottom: -90px; color: rgba(255,255,255,.06); font-family: var(--serif); font-size: 220px; }
 .homeFinalCtaInner { position: relative; z-index: 1; }
 .homeFinalCta h2 { max-width: 880px; margin-bottom: 25px; font-size: clamp(50px, 6vw, 82px); line-height: .98; letter-spacing: -.04em; }
@@ -918,9 +980,14 @@ h1 span { display: block; }
   .experiencePillarGrid, .experienceJourneyGrid { grid-template-columns: repeat(2, 1fr); }
   .applicationWorkspace { grid-template-columns: 250px 1fr; }
   .authorityIntro > div, .homeAboutGrid, .traditionGrid, .homeCampusGrid, .impactGrid { grid-template-columns: 1fr; gap: 55px; }
+  .homePhotoStoryGrid { grid-template-columns: 1fr; gap: 42px; }
+  .homePhotoStory h2 { max-width: 760px; }
+  .homePhotoMosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 300px 240px; }
+  .homePhotoTile1 { grid-column: 1 / -1; grid-row: auto; }
   .homeFeatureGrid, .preparationGrid { grid-template-columns: repeat(2, 1fr); }
   .homeFeatureGrid article:nth-child(odd) { border-left: 1px solid var(--line); }
   .campusVisual { position: relative; top: auto; min-height: 500px; }
+  .homeSupportEditorial { grid-template-columns: 1fr; }
   .upHeroInner, .upDefinitionGrid, .upStructureGrid, .upEnvironmentGrid { grid-template-columns: 1fr; gap: 55px; }
   .upHeroMark { display: none; }
   .upFourGrid, .upAudienceGrid { grid-template-columns: repeat(2, 1fr); }
@@ -1040,12 +1107,18 @@ h1 span { display: block; }
   .applicationReference, .applicationSuccessActions { align-items: flex-start; flex-direction: column; gap: 15px; }
   .heroHighlights { display: none; }
   .authorityIntro > div { grid-template-columns: 1fr; gap: 20px; }
+  .homePhotoStory { padding: 82px 0; }
+  .homePhotoMosaic { grid-template-columns: 1fr; grid-template-rows: none; }
+  .homePhotoTile { min-height: 260px; }
   .authorityFacts, .valueRail, .homeFeatureGrid, .preparationGrid, .sixStepPathway, .homeProgramGrid, .supportGroupGrid { grid-template-columns: 1fr; }
   .authorityFacts div, .authorityFacts div:first-child, .valueRail span, .valueRail span:first-child, .homeFeatureGrid article, .homeFeatureGrid article:first-child { border-left: 1px solid rgba(255,255,255,.25); }
+  .authorityFacts div { min-height: 108px; padding: 22px 28px; border-left-color: var(--line); border-bottom: 1px solid var(--line); }
+  .authorityFacts div:last-child { border-bottom: 0; }
   .valueRail span, .valueRail span:first-child { border-color: var(--line); }
   .homeFeatureGrid article, .preparationGrid article { min-height: 250px; }
   .homeFeatureGrid h3, .preparationGrid h3 { margin-top: 38px; }
   .sixStepPathway { border-left: 1px solid rgba(255,255,255,.2); }
+  .homeSupportEditorial figure { min-height: 260px; }
   .supportGroupGrid ul { grid-template-columns: 1fr; }
   .impactStats { grid-template-columns: 1fr 1fr; }
   .ctaActions { align-items: flex-start; flex-direction: column; }
@@ -1386,4 +1459,167 @@ h1 span { display: block; }
   .slWellbeingVisual { min-height: 380px; }
   .upMontrealGrid article,.apDocuments .apDocumentGrid article { grid-template-columns: 1fr; row-gap: 16px; }
   .upMontrealGrid p,.apDocuments .apDocumentGrid p { grid-column: 1; }
+}
+
+/* Sitewide typography pass: calmer display scale with more breathing room. */
+h1 {
+  font-size: clamp(48px, 5.4vw, 78px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 980px;
+  font-size: clamp(50px, 5.6vw, 80px);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.pageHeroInner h1,
+.hecHeroCopy h1,
+.experienceHeroCopy h1,
+.applyPageHero h1,
+.ctHero h1,
+.tfHero h1,
+.apHero h1,
+.upHero h1,
+.wuHero h1,
+.adHero h1,
+.slHero h1,
+.wmHero h1,
+.abHero h1,
+.lgHero h1,
+.lpHero h1,
+.afHero h1,
+.laHero h1 {
+  font-size: clamp(42px, 4.8vw, 70px);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.sectionHeadingBlock h2,
+.intro h2,
+.authorityBanner h2,
+.campusMediaIntro h2,
+.programOverviewIntro h2,
+.directoryContent h2,
+.programSummary h2,
+.lpProgram h2,
+.afStreamHead h2,
+.afEnvironment h2,
+.experienceIntroGrid h2,
+.homeAbout h2,
+.impactSection h2,
+.upDefinition h2,
+.upEnvironment h2,
+.wuEcosystemIntro h2,
+.wmHero h2,
+.wmWelcome h2,
+.slCommunity h2,
+.slStories h2,
+.abDirector h2,
+.abVision h2,
+.abExcellence h2,
+.lgDirector h2,
+.ctInfo h2,
+.ctFormGrid h2,
+.applicationForm > header h2,
+.laTwo h2 {
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.applyInner h2,
+.homeFinalCta h2,
+.upFinalCta h2,
+.apApplicationIntro h2,
+.wuCta h2,
+.adCta h2,
+.slCta h2,
+.wmCta h2,
+.lpCta h2,
+.afCta h2,
+.abCta h2,
+.lgCta h2,
+.tfCta h2,
+.hecCta h2,
+.laCta h2 {
+  font-size: clamp(40px, 4.7vw, 66px);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+@media (max-width: 780px) {
+  h1,
+  .hero h1,
+  .pageHeroInner h1,
+  .hecHeroCopy h1,
+  .experienceHeroCopy h1,
+  .applyPageHero h1,
+  .ctHero h1,
+  .tfHero h1,
+  .apHero h1,
+  .upHero h1,
+  .wuHero h1,
+  .adHero h1,
+  .slHero h1,
+  .wmHero h1,
+  .abHero h1,
+  .lgHero h1,
+  .lpHero h1,
+  .afHero h1,
+  .laHero h1 {
+    font-size: clamp(40px, 10.8vw, 58px);
+    line-height: 1.14;
+    letter-spacing: 0;
+  }
+
+  .sectionHeadingBlock h2,
+  .intro h2,
+  .authorityBanner h2,
+  .campusMediaIntro h2,
+  .programOverviewIntro h2,
+  .directoryContent h2,
+  .programSummary h2,
+  .lpProgram h2,
+  .afStreamHead h2,
+  .afEnvironment h2,
+  .experienceIntroGrid h2,
+  .homeAbout h2,
+  .impactSection h2,
+  .upDefinition h2,
+  .upEnvironment h2,
+  .wuEcosystemIntro h2,
+  .wmHero h2,
+  .wmWelcome h2,
+  .slCommunity h2,
+  .slStories h2,
+  .abDirector h2,
+  .abVision h2,
+  .abExcellence h2,
+  .lgDirector h2,
+  .ctInfo h2,
+  .ctFormGrid h2,
+  .applicationForm > header h2,
+  .laTwo h2,
+  .applyInner h2,
+  .homeFinalCta h2,
+  .upFinalCta h2,
+  .apApplicationIntro h2,
+  .wuCta h2,
+  .adCta h2,
+  .slCta h2,
+  .wmCta h2,
+  .lpCta h2,
+  .afCta h2,
+  .abCta h2,
+  .lgCta h2,
+  .tfCta h2,
+  .hecCta h2,
+  .laCta h2 {
+    font-size: clamp(34px, 8.7vw, 46px);
+    line-height: 1.16;
+    letter-spacing: 0;
+  }
 }

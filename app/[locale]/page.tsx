@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DocumentLanguage } from "@/components/document-language";
 import { CampusMediaGallery } from "@/components/campus-media-gallery";
+import { HomeHeroEffects } from "@/components/motion/home-hero-effects";
 import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid } from "@/components/motion/stagger-grid";
 import { SiteFooter } from "@/components/site-footer";
@@ -12,6 +14,42 @@ import { homepageContent } from "@/content/homepage-content";
 import { isLocale, locales, siteContent } from "@/content/site-content";
 
 type LocalePageProps = { params: Promise<{ locale: string }> };
+
+const homePhotoStory = {
+  en: {
+    label: "Campus in focus",
+    title: "A learning environment you can actually picture.",
+    images: [
+      { src: "/M/inside 1.jpg", alt: "Students studying in a bright university learning space", caption: "Focused study spaces" },
+      { src: "/M/people 3.jpg", alt: "Students collaborating around a table in a campus study area", caption: "Collaborative learning" },
+      { src: "/M/building 18.jpg", alt: "Aerial view of the Université de Montréal campus landscape", caption: "A real university setting" },
+    ],
+    supportLabel: "Support in action",
+    supportTitle: "Guidance, advising, and student care are part of the daily experience.",
+  },
+  fr: {
+    label: "Le campus en images",
+    title: "Un milieu d’apprentissage que l’on peut vraiment imaginer.",
+    images: [
+      { src: "/M/inside 1.jpg", alt: "Étudiants dans un espace universitaire lumineux", caption: "Espaces d’étude" },
+      { src: "/M/people 3.jpg", alt: "Étudiants collaborant autour d’une table sur le campus", caption: "Apprentissage collaboratif" },
+      { src: "/M/building 18.jpg", alt: "Vue aérienne du paysage du campus de l’Université de Montréal", caption: "Un vrai cadre universitaire" },
+    ],
+    supportLabel: "Le soutien en action",
+    supportTitle: "L’orientation, les conseils et l’accompagnement font partie de l’expérience quotidienne.",
+  },
+  zh: {
+    label: "校园画面",
+    title: "让学生更容易想象自己在这里学习。",
+    images: [
+      { src: "/M/inside 1.jpg", alt: "学生在明亮的大学学习空间中学习", caption: "专注学习空间" },
+      { src: "/M/people 3.jpg", alt: "学生在校园学习区围桌协作", caption: "协作式学习" },
+      { src: "/M/building 18.jpg", alt: "蒙特利尔大学校园环境航拍", caption: "真实大学环境" },
+    ],
+    supportLabel: "支持服务现场",
+    supportTitle: "选课指导、升学建议与学生关怀，是日常学习体验的一部分。",
+  },
+} as const;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -24,7 +62,7 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
   return {
     title: metadata.title,
     description: metadata.description,
-    alternates: { canonical: `/${locale}`, languages: { en: "/en", fr: "/fr", "zh-Hans": "/zh" } },
+    alternates: { canonical: `/${locale}`, languages: { en: "/en", fr: "/fr" } },
   };
 }
 
@@ -33,6 +71,7 @@ export default async function LocaleHome({ params }: LocalePageProps) {
   if (!isLocale(locale)) notFound();
   const content = siteContent[locale];
   const home = homepageContent[locale];
+  const photoStory = homePhotoStory[locale];
 
   return (
     <div lang={content.htmlLang}>
@@ -40,6 +79,7 @@ export default async function LocaleHome({ params }: LocalePageProps) {
       <SiteHeader locale={locale} content={content.header} />
       <main>
         <section className="hero">
+          <HomeHeroEffects />
           <div className="heroBackdrop" aria-hidden="true">
             <video className="heroVideo" autoPlay muted loop playsInline preload="metadata" poster="/M/building 3.jpg">
               <source src="/videos/udem-campus-hero.mp4" type="video/mp4" />
@@ -69,6 +109,23 @@ export default async function LocaleHome({ params }: LocalePageProps) {
           </div>
           <div className="shell authorityFacts">
             {home.authority.facts.map((fact) => <div key={fact.label}><strong>{fact.value}</strong><span>{fact.label}</span></div>)}
+          </div>
+        </section>
+
+        <section className="homePhotoStory" aria-labelledby="home-photo-story-title">
+          <div className="shell homePhotoStoryGrid">
+            <Reveal>
+              <p className="sectionLabel">{photoStory.label}</p>
+              <h2 id="home-photo-story-title">{photoStory.title}</h2>
+            </Reveal>
+            <div className="homePhotoMosaic">
+              {photoStory.images.map((image, index) => (
+                <figure key={image.src} className={`homePhotoTile homePhotoTile${index + 1}`}>
+                  <Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 100vw, 34vw" />
+                  <figcaption><span>0{index + 1}</span>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -136,6 +193,15 @@ export default async function LocaleHome({ params }: LocalePageProps) {
         <section className="homeSupport contentSection" id="support">
           <div className="shell">
             <Reveal><SectionHeading label={home.support.label} title={home.support.title} description={home.support.description} /></Reveal>
+            <div className="homeSupportEditorial">
+              <figure>
+                <Image src="/M/people.jpg" alt={photoStory.supportTitle} fill sizes="(max-width: 760px) 100vw, 48vw" />
+              </figure>
+              <div>
+                <p className="sectionLabel">{photoStory.supportLabel}</p>
+                <h3>{photoStory.supportTitle}</h3>
+              </div>
+            </div>
             <div className="supportGroupGrid">{home.support.groups.map((group, index) => <article key={group.title}><span>0{index + 1}</span><h3>{group.title}</h3><p>{group.description}</p><ul>{group.services.map((service) => <li key={service}>{service}</li>)}</ul></article>)}</div>
           </div>
         </section>

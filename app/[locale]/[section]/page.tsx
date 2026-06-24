@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: page.metadataDescription,
     alternates: {
       canonical: `/${locale}/${section}`,
-      languages: { en: `/en/${section}`, fr: `/fr/${section}`, "zh-Hans": `/zh/${section}` },
+      languages: { en: `/en/${section}`, fr: `/fr/${section}` },
     },
   };
 }

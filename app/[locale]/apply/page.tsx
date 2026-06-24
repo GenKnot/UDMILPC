@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: copy.metadataTitle,
     description: copy.metadataDescription,
-    alternates: { canonical: `/${locale}/apply`, languages: { en: "/en/apply", fr: "/fr/apply", "zh-Hans": "/zh/apply" } },
+    alternates: { canonical: `/${locale}/apply`, languages: { en: "/en/apply", fr: "/fr/apply" } },
   };
 }
 

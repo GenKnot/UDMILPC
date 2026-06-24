@@ -1,8 +1,9 @@
-export const locales = ["en", "fr", "zh"] as const;
-export type Locale = (typeof locales)[number];
+export const locales = ["en", "fr"] as const;
+export const contentLocales = ["en", "fr", "zh"] as const;
+export type Locale = (typeof contentLocales)[number];
 
 export function isLocale(value: string): value is Locale {
-  return locales.includes(value as Locale);
+  return locales.includes(value as (typeof locales)[number]);
 }
 
 type LinkItem = { label: string; href: string };
