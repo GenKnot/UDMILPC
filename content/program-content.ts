@@ -1,6 +1,6 @@
 import type { Locale } from "@/content/site-content";
 
-export const programSlugs = ["language-preparation", "university-pathway", "academic-foundation"] as const;
+export const programSlugs = ["language-preparation", "university-pathway", "academic-foundation", "business-french-hec", "hec-bachelors"] as const;
 export type ProgramSlug = (typeof programSlugs)[number];
 
 export function isProgramSlug(value: string): value is ProgramSlug {
@@ -24,6 +24,9 @@ export type ProgramDetail = {
   pathway: string[];
   requirements: string[];
   faq: Array<{ question: string; answer: string }>;
+  externalUrl?: string;
+  externalAction?: string;
+  visualClass?: string;
 };
 
 type ProgramContent = {
@@ -79,8 +82,8 @@ export const programContent: Record<Locale, ProgramContent> = {
       title: "Preparation designed around where you want to go.",
       description: "Build language confidence, university-level academic skills, and subject foundations through a pathway matched to your goals.",
       introLabel: "Choose your pathway",
-      introTitle: "Three starting points. One commitment to future success.",
-      introDescription: "Students arrive with different strengths and ambitions. Our program structure makes it possible to begin with language, academic readiness, or subject preparation and progress with purpose.",
+      introTitle: "Preparation pathways and HEC Montréal opportunities.",
+      introDescription: "Students arrive with different strengths and ambitions. Our program structure makes it possible to begin with language, academic readiness, subject preparation, or a curated HEC Montréal opportunity and progress with purpose.",
       compareLabel: "How to choose",
       compareTitle: "Start with the preparation you need most.",
       compareItems: [
@@ -185,6 +188,66 @@ export const programContent: Record<Locale, ProgramContent> = {
           { question: "Are the courses for university credit?", answer: "These courses are designed as academic preparation. Any credit or advanced-standing arrangement must be confirmed by the receiving institution and will be stated in official program information." },
         ],
       },
+      "business-french-hec": {
+        slug: "business-french-hec", shortTitle: "Business French", title: "HEC Montréal Business French Summer School",
+        eyebrow: "HEC Montréal · French immersion · Business communication",
+        description: "Explore HEC Montréal’s intensive Business French Summer School, a four-week immersion experience combining professional French, business culture, Montréal activities, and applied communication.",
+        summary: "Designed for learners who want to use French in business and professional settings, HEC Montréal’s Business French Summer School combines intensive language instruction with real-world business vocabulary, company visits, sociocultural activities, and the experience of studying in Montréal. Our page provides a short orientation; official details and registration remain on the HEC program website.",
+        facts: [{ value: "4", label: "Week immersion" }, { value: "0–4", label: "French levels" }, { value: "HEC", label: "Official program" }, { value: "MTL", label: "Montréal experience" }],
+        audience: ["Students interested in French for business and professional communication", "Learners who want an immersive Montréal summer experience", "Students preparing for study, work, or networking in a francophone environment", "Participants who want structured language learning with cultural and company exposure"],
+        outcomes: [
+          { title: "Professional French", description: "Develop vocabulary and confidence for business situations, presentations, meetings, and workplace interaction." },
+          { title: "Immersive practice", description: "Use French actively through classes, campus life, cultural activities, and guided Montréal experiences." },
+          { title: "Business context", description: "Connect language learning with company visits, professional themes, and the culture of business in Québec." },
+          { title: "International network", description: "Learn alongside participants from different backgrounds in a focused HEC Montréal environment." },
+        ],
+        curriculum: [
+          { title: "Business French classes", description: "Intensive instruction focused on practical and professional French communication." },
+          { title: "Level-based learning", description: "HEC lists levels from novice to intermediate-advanced so participants can study at the appropriate point." },
+          { title: "Company and cultural visits", description: "The official program includes exposure to Montréal companies and sociocultural activities." },
+          { title: "Optional lodging", description: "HEC provides official information about accommodation options for participants who need them." },
+        ],
+        pathway: ["Review the program", "Check the official HEC page", "Confirm level and dates", "Register through HEC", "Study in Montréal"],
+        requirements: ["Review official HEC dates and registration information", "Check the language level that matches your background", "Confirm tuition, credits, lodging, and activity details directly with HEC", "Use the official HEC registration process"],
+        faq: [
+          { question: "Is this an HEC Montréal program?", answer: "Yes. The Business French Summer School is presented here as an HEC Montréal opportunity. Official details, registration, dates, tuition, and policies should be confirmed on the HEC website." },
+          { question: "What does the program focus on?", answer: "It focuses on French for business and professional communication, supported by immersion, Montréal activities, and exposure to business contexts." },
+          { question: "Where should students register?", answer: "Students should use the official HEC Montréal program website and registration process linked from this page." },
+        ],
+        externalUrl: "https://francaisaffaires-immersion.hec.ca/en/",
+        externalAction: "View official HEC page",
+        visualClass: "hecFrenchVisual",
+      },
+      "hec-bachelors": {
+        slug: "hec-bachelors", shortTitle: "HEC Bachelor’s", title: "HEC Montréal Bachelor’s Programs",
+        eyebrow: "HEC Montréal · BBA · Undergraduate pathways",
+        description: "Explore HEC Montréal’s undergraduate business studies, including its Bachelor of Business Administration and related preparatory pathways for students entering from different education systems.",
+        summary: "HEC Montréal’s Bachelor’s programs page introduces undergraduate business study options, including the Bachelor of Business Administration, bilingual study possibilities, specializations, student experience, and preparatory pathways for applicants whose previous education system requires an additional year before the BBA. Our page gives students a simple orientation before they continue to the official HEC site.",
+        facts: [{ value: "BBA", label: "Core degree" }, { value: "3", label: "Year program" }, { value: "15", label: "Specializations" }, { value: "HEC", label: "Official details" }],
+        audience: ["Students exploring undergraduate business study in Montréal", "Applicants interested in management, entrepreneurship, finance, marketing, analytics, or international business", "Students who may need a preparatory year before entering a BBA pathway", "Families comparing business-school options and language pathways"],
+        outcomes: [
+          { title: "Business foundation", description: "Understand the structure of undergraduate management education and the breadth of business disciplines." },
+          { title: "Specialization planning", description: "Explore how students can move from core business learning toward a focused field of interest." },
+          { title: "Bilingual environment", description: "Consider the language options and Montréal context that shape the HEC student experience." },
+          { title: "Application orientation", description: "Use the official HEC page to confirm admission paths, requirements, deadlines, and program details." },
+        ],
+        curriculum: [
+          { title: "Bachelor of Business Administration", description: "HEC presents a three-year BBA structure with a broad management foundation and specialization options." },
+          { title: "Specialization options", description: "The official page highlights multiple specializations for students building a business profile." },
+          { title: "Student experience", description: "Students can review campus life, services, international opportunities, and the wider HEC environment." },
+          { title: "Preparatory pathway", description: "HEC directs students from some education systems to review preparatory-year information before BBA entry." },
+        ],
+        pathway: ["Explore undergraduate options", "Review BBA and preparatory paths", "Confirm admission category", "Apply through official HEC channels", "Plan business studies"],
+        requirements: ["Check official HEC admission requirements for your education system", "Confirm language, deadline, and document requirements on the HEC website", "Review whether a preparatory year applies to your background", "Use HEC’s official application and advising channels for final decisions"],
+        faq: [
+          { question: "Does this page replace HEC’s official admissions information?", answer: "No. This page is only a guided overview. Students must use the official HEC Montréal website for program requirements, deadlines, tuition, language rules, and application decisions." },
+          { question: "What is the main undergraduate business program?", answer: "HEC’s English bachelor’s program overview points students toward the Bachelor of Business Administration and related pathways." },
+          { question: "Can students explore specializations?", answer: "Yes. The HEC bachelor’s page highlights a broad business education with multiple specialization options." },
+        ],
+        externalUrl: "https://www.hec.ca/en/programs/bachelors",
+        externalAction: "View HEC Bachelor’s programs",
+        visualClass: "hecBachelorVisual",
+      },
     },
   },
   fr: {
@@ -192,8 +255,8 @@ export const programContent: Record<Locale, ProgramContent> = {
       metadataTitle: "Programmes | Collège International Montréal", eyebrow: "Programmes académiques",
       title: "Une préparation conçue autour de votre destination.",
       description: "Développez votre aisance linguistique, vos méthodes universitaires et vos connaissances de base grâce à un parcours adapté à vos objectifs.",
-      introLabel: "Choisir son parcours", introTitle: "Trois points de départ. Un même engagement envers votre réussite.",
-      introDescription: "Chaque étudiant arrive avec des forces et des ambitions différentes. Notre structure permet de commencer par la langue, les méthodes académiques ou la préparation disciplinaire.",
+      introLabel: "Choisir son parcours", introTitle: "Des parcours de préparation et des occasions HEC Montréal.",
+      introDescription: "Chaque étudiant arrive avec des forces et des ambitions différentes. Notre structure permet de commencer par la langue, les méthodes académiques, la préparation disciplinaire ou une occasion ciblée liée à HEC Montréal.",
       compareLabel: "Comment choisir", compareTitle: "Commencez par la préparation dont vous avez le plus besoin.",
       compareItems: [
         { title: "Renforcer la communication", description: "Choisissez la préparation linguistique si le français ou l’anglais est votre priorité." },
@@ -292,6 +355,64 @@ export const programContent: Record<Locale, ProgramContent> = {
           { question: "Les cours donnent-ils des crédits universitaires?", answer: "Ces cours sont conçus comme une préparation académique. Toute reconnaissance de crédits ou d’acquis doit être confirmée par l’établissement d’accueil et indiquée dans l’information officielle du programme." },
         ],
       },
+      "business-french-hec": {
+        slug: "business-french-hec", shortTitle: "Français des affaires", title: "École d’été de français des affaires HEC Montréal", eyebrow: "HEC Montréal · Immersion en français · Communication professionnelle",
+        description: "Découvrez l’école d’été intensive de français des affaires de HEC Montréal, une expérience immersive de quatre semaines axée sur le français professionnel, la culture d’affaires et Montréal.",
+        summary: "Destinée aux apprenants qui veulent utiliser le français dans des contextes d’affaires et professionnels, l’école d’été de français des affaires de HEC Montréal combine enseignement intensif, vocabulaire professionnel, visites d’entreprises, activités socioculturelles et expérience montréalaise. Cette page offre une orientation simple; les détails officiels et l’inscription demeurent sur le site HEC.",
+        facts: [{ value: "4", label: "Semaines d’immersion" }, { value: "0–4", label: "Niveaux de français" }, { value: "HEC", label: "Programme officiel" }, { value: "MTL", label: "Expérience montréalaise" }],
+        audience: ["Étudiants intéressés par le français des affaires et la communication professionnelle", "Apprenants qui souhaitent vivre une immersion estivale à Montréal", "Étudiants préparant des études, un emploi ou un réseau en milieu francophone", "Participants recherchant une formation structurée avec exposition culturelle et professionnelle"],
+        outcomes: [
+          { title: "Français professionnel", description: "Développer le vocabulaire et l’aisance nécessaires aux échanges, présentations et situations de travail." },
+          { title: "Pratique immersive", description: "Utiliser le français en classe, dans la vie montréalaise et lors d’activités encadrées." },
+          { title: "Contexte d’affaires", description: "Relier l’apprentissage linguistique aux visites d’entreprises, aux thèmes professionnels et à la culture d’affaires québécoise." },
+          { title: "Réseau international", description: "Étudier avec des participants de profils variés dans l’environnement de HEC Montréal." },
+        ],
+        curriculum: [
+          { title: "Cours de français des affaires", description: "Enseignement intensif centré sur la communication professionnelle et pratique." },
+          { title: "Apprentissage par niveau", description: "HEC présente des niveaux allant de novice à intermédiaire-avancé." },
+          { title: "Visites et activités", description: "Le programme officiel comprend des visites d’entreprises et des activités socioculturelles." },
+          { title: "Hébergement optionnel", description: "HEC fournit l’information officielle sur les options d’hébergement disponibles." },
+        ],
+        pathway: ["Explorer le programme", "Consulter la page HEC officielle", "Confirmer le niveau et les dates", "S’inscrire auprès de HEC", "Étudier à Montréal"],
+        requirements: ["Vérifier les dates et modalités officielles de HEC", "Identifier le niveau de français approprié", "Confirmer directement auprès de HEC les frais, crédits, hébergement et activités", "Utiliser le processus d’inscription officiel de HEC"],
+        faq: [
+          { question: "Est-ce un programme de HEC Montréal?", answer: "Oui. Cette page présente l’occasion HEC Montréal, mais les dates, frais, politiques et inscriptions doivent être confirmés sur le site officiel." },
+          { question: "Quel est l’objectif principal?", answer: "Le programme vise le français des affaires et la communication professionnelle, avec immersion, activités montréalaises et contexte d’affaires." },
+          { question: "Où faut-il s’inscrire?", answer: "Les étudiants doivent utiliser le site et le processus d’inscription officiels de HEC Montréal." },
+        ],
+        externalUrl: "https://francaisaffaires-immersion.hec.ca/en/",
+        externalAction: "Voir la page officielle HEC",
+        visualClass: "hecFrenchVisual",
+      },
+      "hec-bachelors": {
+        slug: "hec-bachelors", shortTitle: "Baccalauréats HEC", title: "Programmes de baccalauréat de HEC Montréal", eyebrow: "HEC Montréal · BAA · Parcours de premier cycle",
+        description: "Explorez les études de premier cycle en gestion à HEC Montréal, dont le baccalauréat en administration des affaires et les parcours préparatoires selon le système scolaire d’origine.",
+        summary: "La page officielle des programmes de baccalauréat de HEC Montréal présente les études de premier cycle en gestion, dont le BAA, les possibilités bilingues, les spécialisations, l’expérience étudiante et les parcours préparatoires pour certains profils internationaux. Cette page sert d’orientation avant de consulter les informations officielles de HEC.",
+        facts: [{ value: "BAA", label: "Diplôme principal" }, { value: "3", label: "Années d’études" }, { value: "15", label: "Spécialisations" }, { value: "HEC", label: "Détails officiels" }],
+        audience: ["Étudiants qui explorent des études de gestion à Montréal", "Candidats intéressés par la finance, le marketing, l’entrepreneuriat, l’analytique ou le commerce international", "Étudiants pouvant devoir suivre une année préparatoire avant le BAA", "Familles qui comparent les options d’école de gestion et de parcours linguistique"],
+        outcomes: [
+          { title: "Base en gestion", description: "Comprendre la structure des études de gestion et la variété des disciplines d’affaires." },
+          { title: "Planification de spécialisation", description: "Explorer comment les étudiants passent d’une base commune vers un domaine d’intérêt." },
+          { title: "Environnement bilingue", description: "Considérer les options linguistiques et le contexte montréalais de l’expérience HEC." },
+          { title: "Orientation d’admission", description: "Utiliser la page officielle HEC pour confirmer parcours, exigences, dates et détails." },
+        ],
+        curriculum: [
+          { title: "Baccalauréat en administration des affaires", description: "HEC présente une structure de BAA de trois ans avec base en gestion et spécialisations." },
+          { title: "Options de spécialisation", description: "La page officielle met en avant plusieurs spécialisations pour construire un profil d’affaires." },
+          { title: "Expérience étudiante", description: "Les étudiants peuvent explorer la vie de campus, les services, l’international et l’environnement HEC." },
+          { title: "Parcours préparatoire", description: "HEC dirige certains étudiants vers l’information sur l’année préparatoire avant l’entrée au BAA." },
+        ],
+        pathway: ["Explorer les options", "Vérifier BAA et parcours préparatoires", "Confirmer sa catégorie d’admission", "Postuler par les canaux HEC", "Planifier ses études en gestion"],
+        requirements: ["Vérifier les exigences officielles de HEC selon son système scolaire", "Confirmer les exigences linguistiques, dates limites et documents", "Vérifier si une année préparatoire s’applique", "Utiliser les canaux officiels de HEC pour toute décision finale"],
+        faq: [
+          { question: "Cette page remplace-t-elle l’information officielle de HEC?", answer: "Non. Elle offre seulement un aperçu guidé. Les exigences, dates, frais, règles linguistiques et décisions relèvent du site officiel de HEC Montréal." },
+          { question: "Quel est le principal programme de premier cycle?", answer: "La page anglaise de HEC oriente les étudiants vers le baccalauréat en administration des affaires et les parcours associés." },
+          { question: "Peut-on explorer des spécialisations?", answer: "Oui. HEC présente une formation de gestion avec plusieurs options de spécialisation." },
+        ],
+        externalUrl: "https://www.hec.ca/en/programs/bachelors",
+        externalAction: "Voir les baccalauréats HEC",
+        visualClass: "hecBachelorVisual",
+      },
     },
   },
   zh: {
@@ -299,8 +420,8 @@ export const programContent: Record<Locale, ProgramContent> = {
       metadataTitle: "课程设置 | 蒙特利尔国际学院", eyebrow: "学术课程",
       title: "从未来方向出发，做好真正有用的准备。",
       description: "根据个人目标，通过语言训练、大学学习能力和学科基础课程，找到适合自己的升学路径。",
-      introLabel: "选择学习路径", introTitle: "三种起点，共同通往更成熟的未来。",
-      introDescription: "每位学生的能力基础和未来理想都不相同。课程体系允许学生从语言、学术准备或专业基础开始，循序渐进地建立长期能力。",
+      introLabel: "选择学习路径", introTitle: "语言与学术准备，也连接 HEC Montréal 学习机会。",
+      introDescription: "每位学生的能力基础和未来理想都不相同。课程体系允许学生从语言、学术准备、专业基础或 HEC Montréal 相关机会开始，循序渐进地建立长期能力。",
       compareLabel: "如何选择", compareTitle: "从你目前最需要的准备开始。",
       compareItems: [
         { title: "提升沟通能力", description: "如果当前重点是提高法语或英语能力，可从语言准备课程开始。" },
@@ -398,6 +519,64 @@ export const programContent: Record<Locale, ProgramContent> = {
           { question: "课程能帮助我选择大学专业吗？", answer: "课程会介绍不同学科领域并提供规划支持，帮助学生作出更有依据的选择。" },
           { question: "这些课程提供大学学分吗？", answer: "课程定位为大学前学术准备。任何学分或先修认可均由接收院校确认，并以正式课程资料为准。" },
         ],
+      },
+      "business-french-hec": {
+        slug: "business-french-hec", shortTitle: "商务法语", title: "HEC Montréal 商务法语暑期课程", eyebrow: "HEC Montréal · 法语沉浸 · 商务沟通",
+        description: "了解 HEC Montréal 的商务法语暑期沉浸课程：为期四周，结合职业法语、商务文化、蒙特利尔体验和实际沟通训练。",
+        summary: "HEC Montréal 的商务法语暑期课程面向希望在商务和职业场景中使用法语的学习者。课程结合密集语言教学、商务词汇、企业参访、文化活动和蒙特利尔学习体验。本页提供简要介绍，具体日期、费用、注册和政策以 HEC 官方页面为准。",
+        facts: [{ value: "4", label: "周沉浸学习" }, { value: "0–4", label: "法语级别" }, { value: "HEC", label: "官方项目" }, { value: "MTL", label: "蒙特利尔体验" }],
+        audience: ["希望提升商务法语和职业沟通能力的学生", "希望在蒙特利尔体验暑期沉浸学习的学习者", "准备在法语环境中学习、工作或拓展人脉的学生", "希望结合语言、文化和企业参访的参与者"],
+        outcomes: [
+          { title: "职业法语", description: "提升商务交流、演讲、会议和职场互动所需的词汇与表达信心。" },
+          { title: "沉浸式练习", description: "通过课堂、校园生活、城市活动和实际场景主动使用法语。" },
+          { title: "商务语境", description: "将语言学习与企业参访、职业主题和魁北克商务文化联系起来。" },
+          { title: "国际学习网络", description: "在 HEC Montréal 环境中与不同背景的参与者共同学习。" },
+        ],
+        curriculum: [
+          { title: "商务法语课程", description: "以实践和职业沟通为核心的密集语言教学。" },
+          { title: "按级别学习", description: "HEC 官方页面列出从 novice 到 intermediate-advanced 的学习级别。" },
+          { title: "企业与文化活动", description: "官方项目包含企业参访和蒙特利尔社会文化体验。" },
+          { title: "可选住宿信息", description: "如有需要，HEC 官网提供住宿选项和相关说明。" },
+        ],
+        pathway: ["了解项目概况", "查看 HEC 官方页面", "确认级别与日期", "通过 HEC 注册", "在蒙特利尔学习"],
+        requirements: ["查看 HEC 官方日期与注册说明", "确认适合自己的法语级别", "直接向 HEC 确认费用、学分、住宿和活动细节", "使用 HEC 官方注册流程"],
+        faq: [
+          { question: "这是 HEC Montréal 的项目吗？", answer: "是的。本页介绍 HEC Montréal 的商务法语暑期课程，但日期、费用、政策和注册均应以 HEC 官方网站为准。" },
+          { question: "课程重点是什么？", answer: "课程重点是商务法语和职业沟通，并结合沉浸式练习、蒙特利尔活动和商务语境。" },
+          { question: "学生在哪里注册？", answer: "学生应通过本页链接进入 HEC Montréal 官方项目页面，并使用官方注册流程。" },
+        ],
+        externalUrl: "https://francaisaffaires-immersion.hec.ca/en/",
+        externalAction: "查看 HEC 官方页面",
+        visualClass: "hecFrenchVisual",
+      },
+      "hec-bachelors": {
+        slug: "hec-bachelors", shortTitle: "HEC 本科", title: "HEC Montréal 本科项目", eyebrow: "HEC Montréal · BBA · 本科商科路径",
+        description: "了解 HEC Montréal 的本科商科学习方向，包括工商管理学士、双语学习可能性，以及不同教育体系学生可参考的预备路径。",
+        summary: "HEC Montréal 本科项目页面介绍本科商科学习选择，包括工商管理学士、双语学习可能性、专业方向、学生体验，以及部分教育体系学生进入 BBA 前可能需要了解的预备年路径。本页帮助学生先建立整体认识，具体要求与申请信息以 HEC 官网为准。",
+        facts: [{ value: "BBA", label: "核心学位" }, { value: "3", label: "年制项目" }, { value: "15", label: "专业方向" }, { value: "HEC", label: "官方详情" }],
+        audience: ["正在了解蒙特利尔本科商科学习的学生", "对管理、创业、金融、市场、数据分析或国际商务感兴趣的申请人", "可能需要在进入 BBA 前完成预备路径的学生", "正在比较商学院、语言和升学路径的家庭"],
+        outcomes: [
+          { title: "商科基础认知", description: "了解本科管理教育的结构，以及商科不同领域的广度。" },
+          { title: "专业方向规划", description: "了解学生如何从通用商科基础逐步走向具体兴趣领域。" },
+          { title: "双语学习环境", description: "结合 HEC 的语言选项和蒙特利尔环境，思考适合自己的学习路径。" },
+          { title: "申请信息导向", description: "通过 HEC 官方页面确认申请路径、要求、截止日期和项目细节。" },
+        ],
+        curriculum: [
+          { title: "工商管理学士", description: "HEC 官方页面介绍三年制 BBA 结构，包含管理基础和专业方向。" },
+          { title: "专业方向选择", description: "官方页面展示多个商科专业方向，便于学生建立未来学习画像。" },
+          { title: "学生体验", description: "学生可了解校园生活、服务支持、国际机会和 HEC 学习环境。" },
+          { title: "预备路径", description: "对于部分教育体系背景的学生，HEC 会引导查看 BBA 入学前的预备年信息。" },
+        ],
+        pathway: ["了解本科选择", "查看 BBA 与预备路径", "确认个人申请类别", "通过 HEC 官方渠道申请", "规划商科学习"],
+        requirements: ["根据自己的教育体系查看 HEC 官方入学要求", "确认语言、截止日期和申请材料要求", "查看自己是否需要预备年路径", "以 HEC 官方申请和咨询渠道为最终依据"],
+        faq: [
+          { question: "本页能替代 HEC 官方招生信息吗？", answer: "不能。本页只是简要导览，项目要求、截止日期、费用、语言规则和录取决定均以 HEC Montréal 官方网站为准。" },
+          { question: "主要本科商科项目是什么？", answer: "HEC 英文本科总览页面主要引导学生了解工商管理学士及相关路径。" },
+          { question: "可以了解专业方向吗？", answer: "可以。HEC 本科页面展示了广泛的商科教育和多个专业方向。" },
+        ],
+        externalUrl: "https://www.hec.ca/en/programs/bachelors",
+        externalAction: "查看 HEC 本科项目",
+        visualClass: "hecBachelorVisual",
       },
     },
   },

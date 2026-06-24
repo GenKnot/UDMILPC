@@ -15,6 +15,7 @@ import { StatStrip } from "@/components/ui/stat-strip";
 import { UniversityPathwayPage } from "@/components/university-pathway-page";
 import { LanguagePreparationPage } from "@/components/language-preparation-page";
 import { AcademicFoundationPage } from "@/components/academic-foundation-page";
+import { HecProgramPage } from "@/components/hec-program-page";
 import { isProgramSlug, programContent, programSlugs } from "@/content/program-content";
 import { isLocale, locales, siteContent } from "@/content/site-content";
 
@@ -41,19 +42,23 @@ export default async function ProgramDetailPage({ params }: Props) {
   if (slug === "university-pathway") return <UniversityPathwayPage locale={locale} chrome={chrome} />;
   if (slug === "language-preparation") return <LanguagePreparationPage locale={locale} chrome={chrome} />;
   if (slug === "academic-foundation") return <AcademicFoundationPage locale={locale} chrome={chrome} />;
+  if (slug === "business-french-hec" || slug === "hec-bachelors") return <HecProgramPage locale={locale} chrome={chrome} slug={slug} />;
   const inPageItems = [
     { label: content.labels.overview, href: "#overview" },
     { label: content.labels.outcomes, href: "#outcomes" },
     { label: content.labels.curriculum, href: "#curriculum" },
     { label: content.labels.requirements, href: "#requirements" },
   ];
+  const ctaHref = program.externalUrl ?? `/${locale}/apply`;
+  const ctaAction = program.externalAction ?? content.labels.applyAction;
+  const visualClass = program.visualClass ? ` ${program.visualClass}` : "";
 
   return (
     <div lang={chrome.htmlLang}>
       <DocumentLanguage lang={chrome.htmlLang} />
       <SiteHeader locale={locale} content={chrome.header} />
       <main>
-        <PageHero eyebrow={program.eyebrow} title={program.title} description={program.description}>
+        <PageHero className={program.visualClass} eyebrow={program.eyebrow} title={program.title} description={program.description}>
           <Breadcrumb items={[
             { label: content.labels.home, href: `/${locale}` },
             { label: content.labels.programs, href: `/${locale}/programs` },
@@ -70,7 +75,7 @@ export default async function ProgramDetailPage({ params }: Props) {
               <h2>{content.labels.overviewTitle}</h2>
               <p className="programLead">{program.summary}</p>
             </Reveal>
-            <div className="programHeroPlaceholder"><span>{content.labels.imagePlaceholder}</span><b>{program.shortTitle}</b></div>
+            <div className={`programHeroPlaceholder${visualClass}`}><span>{content.labels.imagePlaceholder}</span><b>{program.shortTitle}</b></div>
           </div>
         </section>
 
@@ -124,7 +129,7 @@ export default async function ProgramDetailPage({ params }: Props) {
           </div>
         </section>
 
-        <CtaBand label={content.labels.applyLabel} title={content.labels.applyTitle} description={content.labels.applyDescription} action={content.labels.applyAction} href={`/${locale}/apply`} />
+        <CtaBand label={content.labels.applyLabel} title={content.labels.applyTitle} description={content.labels.applyDescription} action={ctaAction} href={ctaHref} />
       </main>
       <SiteFooter content={chrome.footer} locale={locale} />
     </div>
