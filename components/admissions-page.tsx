@@ -5,6 +5,7 @@ import { StaggerGrid } from "@/components/motion/stagger-grid";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Faq } from "@/components/ui/faq";
+import { HeroInfoCard } from "@/components/ui/hero-info-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { admissionsContent } from "@/content/admissions-content";
 import type { Locale, SiteContent } from "@/content/site-content";
@@ -16,7 +17,7 @@ export function AdmissionsPage({ locale, chrome }: { locale: Locale; chrome: Sit
       <DocumentLanguage lang={chrome.htmlLang} />
       <SiteHeader locale={locale} content={chrome.header} />
       <main>
-        <section className="adHero"><div className="adHeroPattern" /><div className="shell adHeroGrid"><Reveal><p className="eyebrow">{page.hero.eyebrow}</p><h1>{page.hero.title}</h1><p>{page.hero.description}</p><div className="adSlogans">{page.hero.slogans.map((item) => <span key={item}>{item}</span>)}</div><div className="heroActions"><Link className="button" href={`/${locale}/apply`}>{page.hero.actions[0]}<span>↗</span></Link><a className="textLink" href="mailto:admissions@UDEMIC.ca">{page.hero.actions[1]}<span>→</span></a></div></Reveal><div className="adHeroPanel"><span>ADMISSIONS</span><strong>APPLY<br />2026</strong><small>Fall · Winter · Summer</small></div></div></section>
+        <section className="adHero"><div className="adHeroPattern" /><div className="shell adHeroGrid"><Reveal><p className="eyebrow">{page.hero.eyebrow}</p><h1>{page.hero.title}</h1><p>{page.hero.description}</p><div className="adSlogans">{page.hero.slogans.map((item) => <span key={item}>{item}</span>)}</div><div className="heroActions"><Link className="button" href={`/${locale}/apply`}>{page.hero.actions[0]}<span>↗</span></Link><a className="textLink" href="mailto:admissions@UDEMIC.ca">{page.hero.actions[1]}<span>→</span></a></div></Reveal><div className="adHeroPanel heroInfoCard"><HeroInfoCard eyebrow="Admissions" title="Apply 2026" focus="Application support" items={page.hero.slogans} footer="Fall · Winter · Summer" /></div></div></section>
 
         <section className="adApplicants contentSection"><div className="shell"><Reveal><SectionHeading label={page.applicants.label} title={page.applicants.title} description={page.applicants.description} /></Reveal><StaggerGrid className="adFourGrid">{page.applicants.items.map((item, i) => <article key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}</StaggerGrid></div></section>
 

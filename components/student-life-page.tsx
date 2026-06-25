@@ -4,6 +4,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid } from "@/components/motion/stagger-grid";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { HeroInfoCard } from "@/components/ui/hero-info-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { studentLifeContent } from "@/content/student-life-content";
 import type { Locale, SiteContent } from "@/content/site-content";
@@ -14,7 +15,7 @@ export function StudentLifePage({ locale, chrome }: { locale: Locale; chrome: Si
     <DocumentLanguage lang={chrome.htmlLang} />
     <SiteHeader locale={locale} content={chrome.header} />
     <main>
-      <section className="slHero"><div className="slHeroPattern" /><div className="shell slHeroGrid"><Reveal><p className="eyebrow">{page.hero.eyebrow}</p><h1>{page.hero.title}</h1><h2>{page.hero.subtitle}</h2><p>{page.hero.description}</p><div className="slHeroSlogans">{page.hero.slogans.map((x) => <span key={x}>{x}</span>)}</div></Reveal><div className="slHeroVisual"><span>UdeM · Brossard</span><strong>LIFE</strong><small>Study · Connect · Belong</small></div></div></section>
+      <section className="slHero"><div className="slHeroPattern" /><div className="shell slHeroGrid"><Reveal><p className="eyebrow">{page.hero.eyebrow}</p><h1>{page.hero.title}</h1><h2>{page.hero.subtitle}</h2><p>{page.hero.description}</p><div className="slHeroSlogans">{page.hero.slogans.map((x) => <span key={x}>{x}</span>)}</div></Reveal><div className="slHeroVisual heroInfoCard"><HeroInfoCard eyebrow="UdeM · Brossard" title="Life" focus="Study, connect, belong" items={page.hero.slogans} footer="Student community" /></div></div></section>
 
       <section className="slCampus contentSection"><div className="shell"><Reveal><SectionHeading label={page.campus.label} title={page.campus.title} description={page.campus.description} /></Reveal><StaggerGrid className="slFourGrid">{page.campus.items.map((item, i) => <article key={item.title}><span>0{i + 1}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}</StaggerGrid><strong className="slCampusMotto">{page.campus.motto}</strong></div></section>
 

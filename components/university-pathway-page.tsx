@@ -4,6 +4,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { StaggerGrid } from "@/components/motion/stagger-grid";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { HeroInfoCard } from "@/components/ui/hero-info-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { universityPathwayContent } from "@/content/university-pathway-content";
 import type { Locale, SiteContent } from "@/content/site-content";
@@ -25,7 +26,7 @@ export function UniversityPathwayPage({ locale, chrome }: { locale: Locale; chro
               <div className="upSlogans">{page.hero.slogans.map((item) => <span key={item}>{item}</span>)}</div>
               <div className="heroActions"><Link className="button" href={`/${locale}/apply`}>{page.hero.actions[0]}<span>↗</span></Link><Link className="textLink" href={`/${locale}/contact`}>{page.hero.actions[1]}<span>→</span></Link></div>
             </Reveal>
-            <div className="upHeroMark"><span>UNIVERSITY</span><strong>PATHWAY</strong><small>UdeM · Brossard</small></div>
+            <div className="upHeroMark heroInfoCard"><HeroInfoCard eyebrow="University" title="Pathway" focus="Structured preparation" items={page.hero.slogans} footer="UdeM · Brossard" /></div>
           </div>
         </section>
 
