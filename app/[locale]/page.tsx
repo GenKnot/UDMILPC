@@ -95,7 +95,7 @@ export default async function LocaleHome({ params }: LocalePageProps) {
               <div className="heroActions">
                 <Link className="button" href={`/${locale}/apply`}>{home.hero.actions[0]}<span>↗</span></Link>
                 <Link className="textLink" href={`/${locale}/contact`}>{home.hero.actions[1]}<span>→</span></Link>
-                <a className="textLink" href="mailto:admissions@UDEMIC.ca">{home.hero.actions[2]}<span>→</span></a>
+                <a className="textLink" href="mailto:info@Montrealic.ca">{home.hero.actions[2]}<span>→</span></a>
               </div>
             </Reveal>
           </div>

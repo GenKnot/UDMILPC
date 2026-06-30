@@ -104,7 +104,7 @@ const conversionPages: Record<Locale, Record<ConversionSlug, ExperiencePage>> = 
         { title: "Tuition", description: "Request available fee information, payment guidance, and financial planning details." },
         { title: "Student experience", description: "Learn about arrival, academic support, campus routines, and life in Montréal." },
       ] },
-      feature: { label: "Write to admissions", title: "Include the details needed for a helpful reply.", description: "Do not send passwords, banking details, or unnecessary sensitive documents by ordinary email. Application documents should only be provided through an approved secure process.", visualLabel: "admissions@cimontreal.ca", points: ["Full name and country of residence", "Program and intended intake", "Current or most recent education", "A clear question or requested next step"] },
+      feature: { label: "Write to admissions", title: "Include the details needed for a helpful reply.", description: "Do not send passwords, banking details, or unnecessary sensitive documents by ordinary email. Application documents should only be provided through an approved secure process.", visualLabel: "info@Montrealic.ca", points: ["Full name and country of residence", "Program and intended intake", "Current or most recent education", "A clear question or requested next step"] },
       journey: { label: "What happens next", title: "From your question to a clear next action.", description: "The team reviews the request and identifies whether information, advising, or an application step is needed.", items: [
         { title: "Send your question", description: "Provide concise context and the best way to reply." },
         { title: "Request is reviewed", description: "The message is directed to the appropriate program or admissions contact." },
@@ -112,11 +112,11 @@ const conversionPages: Record<Locale, Record<ConversionSlug, ExperiencePage>> = 
         { title: "Take the next step", description: "Explore a program, prepare documents, or begin an application." },
       ] },
       faq: { label: "Contact questions", title: "Getting the right support.", items: [
-        { question: "What email address should future students use?", answer: "Use admissions@cimontreal.ca for general program and admissions enquiries." },
+        { question: "What email address should future students use?", answer: "Use info@Montrealic.ca for general program and admissions enquiries." },
         { question: "Can I email application documents?", answer: "Wait for approved document instructions. Sensitive documents should only be shared through a secure process." },
         { question: "Can a family member contact the College?", answer: "Yes for general information. Personal application details require the applicant’s authorization and appropriate identity checks." },
       ] },
-      cta: { label: "Admissions enquiry", title: "Tell us how we can help.", description: "Send a concise message with your preferred program and intended intake.", action: "Email admissions", href: "mailto:admissions@cimontreal.ca" },
+      cta: { label: "Admissions enquiry", title: "Tell us how we can help.", description: "Send a concise message with your preferred program and intended intake.", action: "Email admissions", href: "mailto:info@Montrealic.ca" },
     },
   },
   fr: {
@@ -184,7 +184,7 @@ const conversionPages: Record<Locale, Record<ConversionSlug, ExperiencePage>> = 
         { title: "Droits et frais", description: "Information disponible, paiements et planification financière." },
         { title: "Expérience étudiante", description: "Arrivée, soutien académique, campus et vie à Montréal." },
       ] },
-      feature: { label: "Écrire aux admissions", title: "Incluez les détails nécessaires à une réponse utile.", description: "N’envoyez pas de mots de passe, renseignements bancaires ou documents sensibles inutiles par courriel ordinaire.", visualLabel: "admissions@cimontreal.ca", points: ["Nom complet et pays de résidence", "Programme et rentrée", "Études actuelles ou récentes", "Question ou prochaine étape souhaitée"] },
+      feature: { label: "Écrire aux admissions", title: "Incluez les détails nécessaires à une réponse utile.", description: "N’envoyez pas de mots de passe, renseignements bancaires ou documents sensibles inutiles par courriel ordinaire.", visualLabel: "info@Montrealic.ca", points: ["Nom complet et pays de résidence", "Programme et rentrée", "Études actuelles ou récentes", "Question ou prochaine étape souhaitée"] },
       journey: { label: "La suite", title: "De votre question à une action claire.", description: "L’équipe détermine si vous avez besoin d’information, de conseil ou d’une étape de demande.", items: [
         { title: "Envoyer la question", description: "Donner un contexte concis et un moyen de réponse." },
         { title: "Étude de la demande", description: "Le message est dirigé vers la bonne personne." },
@@ -192,11 +192,11 @@ const conversionPages: Record<Locale, Record<ConversionSlug, ExperiencePage>> = 
         { title: "Passer à l’action", description: "Explorer, préparer les documents ou commencer la demande." },
       ] },
       faq: { label: "Questions de contact", title: "Obtenir le bon soutien.", items: [
-        { question: "Quelle adresse utiliser?", answer: "Utilisez admissions@cimontreal.ca pour les programmes et l’admission." },
+        { question: "Quelle adresse utiliser?", answer: "Utilisez info@Montrealic.ca pour les programmes et l’admission." },
         { question: "Puis-je envoyer mes documents par courriel?", answer: "Attendez les instructions approuvées; les documents sensibles doivent passer par un processus sécurisé." },
         { question: "Un membre de ma famille peut-il communiquer avec le Collège?", answer: "Oui pour l’information générale. Les détails personnels exigent l’autorisation du candidat." },
       ] },
-      cta: { label: "Demande de renseignements", title: "Dites-nous comment vous aider.", description: "Envoyez un message concis avec le programme et la rentrée souhaités.", action: "Écrire aux admissions", href: "mailto:admissions@cimontreal.ca" },
+      cta: { label: "Demande de renseignements", title: "Dites-nous comment vous aider.", description: "Envoyez un message concis avec le programme et la rentrée souhaités.", action: "Écrire aux admissions", href: "mailto:info@Montrealic.ca" },
     },
   },
   zh: {
@@ -264,7 +264,7 @@ const conversionPages: Record<Locale, Record<ConversionSlug, ExperiencePage>> = 
         { title: "学费与费用", description: "获取现有费用信息、付款指导和财务规划说明。" },
         { title: "学生体验", description: "了解抵达、学术支持、校园日常和蒙特利尔生活。" },
       ] },
-      feature: { label: "联系招生", title: "提供有助于获得有效回复的信息。", description: "请勿通过普通邮件发送密码、银行信息或不必要的敏感文件。申请文件应通过批准的安全流程提供。", visualLabel: "admissions@cimontreal.ca", points: ["姓名及居住国家", "意向课程和入学时间", "当前或近期教育背景", "清晰的问题或下一步需求"] },
+      feature: { label: "联系招生", title: "提供有助于获得有效回复的信息。", description: "请勿通过普通邮件发送密码、银行信息或不必要的敏感文件。申请文件应通过批准的安全流程提供。", visualLabel: "info@Montrealic.ca", points: ["姓名及居住国家", "意向课程和入学时间", "当前或近期教育背景", "清晰的问题或下一步需求"] },
       journey: { label: "后续流程", title: "从问题到明确的下一步。", description: "团队将审核请求，并判断需要提供信息、课程指导还是申请安排。", items: [
         { title: "发送问题", description: "提供简洁背景和有效联系方式。" },
         { title: "审核与分配", description: "信息将转给对应课程或招生联系人。" },
@@ -272,11 +272,11 @@ const conversionPages: Record<Locale, Record<ConversionSlug, ExperiencePage>> = 
         { title: "采取下一步", description: "探索课程、准备材料或开始申请。" },
       ] },
       faq: { label: "联系问题", title: "获得正确支持。", items: [
-        { question: "未来学生应使用哪个邮箱？", answer: "课程和申请咨询请使用 admissions@cimontreal.ca。" },
+        { question: "未来学生应使用哪个邮箱？", answer: "课程和申请咨询请使用 info@Montrealic.ca。" },
         { question: "可以通过邮件发送申请文件吗？", answer: "请等待学院提供批准的文件指引；敏感材料应通过安全流程分享。" },
         { question: "家长可以联系学院吗？", answer: "可以咨询一般信息。涉及个人申请资料时，需要申请人授权及适当身份核实。" },
       ] },
-      cta: { label: "招生咨询", title: "告诉我们需要怎样的帮助。", description: "请在邮件中简要说明意向课程和入学时间。", action: "发送招生邮件", href: "mailto:admissions@cimontreal.ca" },
+      cta: { label: "招生咨询", title: "告诉我们需要怎样的帮助。", description: "请在邮件中简要说明意向课程和入学时间。", action: "发送招生邮件", href: "mailto:info@Montrealic.ca" },
     },
   },
 };
@@ -387,7 +387,7 @@ export const experienceContent: Record<Locale, ExperienceLocaleContent> = {
           { question: "Can I receive help with academic writing and study skills?", answer: "Yes. Academic support is integrated through feedback, learning strategies, and guided practice." },
           { question: "Are student activities part of the experience?", answer: "Community activities and opportunities to use language beyond class support connection, confidence, and cultural learning." },
         ] },
-        cta: { label: "Join the community", title: "Begin with support around you.", description: "Talk with an advisor about programs and the student experience in Montréal.", action: "Contact an advisor", href: "mailto:admissions@cimontreal.ca" },
+        cta: { label: "Join the community", title: "Begin with support around you.", description: "Talk with an advisor about programs and the student experience in Montréal.", action: "Contact an advisor", href: "mailto:info@Montrealic.ca" },
       },
       "learning-approach": {
         metadataTitle: "Learning Approach | Collège International Montréal", metadataDescription: "See how active learning, feedback, research, and reflection build university readiness.", theme: "learning-approach",
@@ -439,7 +439,7 @@ export const experienceContent: Record<Locale, ExperienceLocaleContent> = {
           { question: "How are academic concerns handled?", answer: "Academic concerns should follow a documented process with clear points of contact, review, response, and appeal." },
           { question: "How will policies be published?", answer: "Admissions, academic integrity, accessibility, complaints, privacy, records, and refund policies will be available through the website before launch." },
         ] },
-        cta: { label: "Institutional information", title: "Have a question about the College?", description: "Contact us for institutional, academic, or program information.", action: "Contact the College", href: "mailto:admissions@cimontreal.ca" },
+        cta: { label: "Institutional information", title: "Have a question about the College?", description: "Contact us for institutional, academic, or program information.", action: "Contact the College", href: "mailto:info@Montrealic.ca" },
       },
       ...conversionPages.en,
     },
@@ -549,7 +549,7 @@ export const experienceContent: Record<Locale, ExperienceLocaleContent> = {
           { question: "Puis-je obtenir de l’aide en rédaction?", answer: "Oui. Le soutien académique passe par la rétroaction, les stratégies et la pratique guidée." },
           { question: "Y a-t-il des activités étudiantes?", answer: "Les activités et la pratique hors classe favorisent les liens, la confiance et l’apprentissage culturel." },
         ] },
-        cta: { label: "Rejoindre la communauté", title: "Commencez avec du soutien autour de vous.", description: "Parlez à un conseiller des programmes et de l’expérience étudiante.", action: "Contacter un conseiller", href: "mailto:admissions@cimontreal.ca" },
+        cta: { label: "Rejoindre la communauté", title: "Commencez avec du soutien autour de vous.", description: "Parlez à un conseiller des programmes et de l’expérience étudiante.", action: "Contacter un conseiller", href: "mailto:info@Montrealic.ca" },
       },
       "learning-approach": {
         metadataTitle: "Approche pédagogique | Collège International Montréal", metadataDescription: "Découvrez comment l’apprentissage actif, la rétroaction et la réflexion développent la préparation universitaire.", theme: "learning-approach",
@@ -601,7 +601,7 @@ export const experienceContent: Record<Locale, ExperienceLocaleContent> = {
           { question: "Comment traiter une préoccupation académique?", answer: "Un processus documenté doit préciser le contact, l’examen, la réponse et l’appel." },
           { question: "Comment les politiques seront-elles publiées?", answer: "Les politiques d’admission, d’intégrité, d’accessibilité, de plainte, de confidentialité et de remboursement seront accessibles avant le lancement." },
         ] },
-        cta: { label: "Information institutionnelle", title: "Une question sur le Collège?", description: "Contactez-nous pour des renseignements institutionnels, académiques ou sur les programmes.", action: "Contacter le Collège", href: "mailto:admissions@cimontreal.ca" },
+        cta: { label: "Information institutionnelle", title: "Une question sur le Collège?", description: "Contactez-nous pour des renseignements institutionnels, académiques ou sur les programmes.", action: "Contacter le Collège", href: "mailto:info@Montrealic.ca" },
       },
       ...conversionPages.fr,
     },
@@ -711,7 +711,7 @@ export const experienceContent: Record<Locale, ExperienceLocaleContent> = {
           { question: "可以获得写作和学习方法帮助吗？", answer: "可以。学术支持通过反馈、学习策略和指导性实践融入课程。" },
           { question: "学生体验包含课外活动吗？", answer: "社区活动与课外语言实践有助于建立连接、信心和文化理解。" },
         ] },
-        cta: { label: "加入社区", title: "在支持中开始新的学习阶段。", description: "与课程顾问沟通课程和蒙特利尔学生体验。", action: "联系课程顾问", href: "mailto:admissions@cimontreal.ca" },
+        cta: { label: "加入社区", title: "在支持中开始新的学习阶段。", description: "与课程顾问沟通课程和蒙特利尔学生体验。", action: "联系课程顾问", href: "mailto:info@Montrealic.ca" },
       },
       "learning-approach": {
         metadataTitle: "教学方式 | 蒙特利尔国际学院", metadataDescription: "了解主动学习、反馈、研究和反思如何建立大学学习能力。", theme: "learning-approach",
@@ -763,7 +763,7 @@ export const experienceContent: Record<Locale, ExperienceLocaleContent> = {
           { question: "学术问题如何处理？", answer: "正式流程应明确联系渠道、审查、回复和申诉步骤。" },
           { question: "学院政策将如何发布？", answer: "招生、学术诚信、无障碍、投诉、隐私、记录和退款政策将在正式上线前公开。" },
         ] },
-        cta: { label: "机构信息", title: "对学院还有疑问？", description: "欢迎就机构、学术或课程信息与我们联系。", action: "联系学院", href: "mailto:admissions@cimontreal.ca" },
+        cta: { label: "机构信息", title: "对学院还有疑问？", description: "欢迎就机构、学术或课程信息与我们联系。", action: "联系学院", href: "mailto:info@Montrealic.ca" },
       },
       ...conversionPages.zh,
     },

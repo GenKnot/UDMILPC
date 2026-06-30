@@ -21,9 +21,8 @@ export function SiteFooter({ content, locale }: { content: SiteContent["footer"]
         <div className="footerColumn">
           <strong>{content.information}</strong>
           {content.links.slice(3).map((link) => <a href={localize(link.href)} key={link.label}>{link.label}</a>)}
-          <a href="mailto:admissions@UDEMIC.ca">admissions@UDEMIC.ca</a>
-          <a href="mailto:studentservices@UEDMIC.ca">studentservices@UEDMIC.ca</a>
-          <a href="tel:+15146666666">+1 (514) 666-6666</a>
+          <a href="mailto:info@Montrealic.ca">info@Montrealic.ca</a>
+          <a href="tel:+14166661860">+1 (416) 666-1860</a>
           <span>2000 Rue de l&apos;Éclipse<br />Brossard, Québec, Canada</span>
         </div>
       </div>

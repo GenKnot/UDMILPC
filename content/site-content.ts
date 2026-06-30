@@ -6,7 +6,7 @@ export function isLocale(value: string): value is Locale {
   return locales.includes(value as (typeof locales)[number]);
 }
 
-type LinkItem = { label: string; href: string };
+type LinkItem = { label: string; href: string; kind?: "overview" };
 type CardItem = { number: string; title: string; description: string };
 type FeatureItem = { title: string; description: string };
 
@@ -79,7 +79,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           { label: "Leadership & Governance", href: "/leadership" },
         ] },
         { label: "Programs", href: "/programs", children: [
-          { label: "All Programs", href: "/programs" },
+          { label: "All Programs", href: "/programs", kind: "overview" },
           { label: "Language Preparation", href: "/programs/language-preparation" },
           { label: "University Pathway", href: "/programs/university-pathway" },
           { label: "Academic Foundation", href: "/programs/academic-foundation" },
@@ -232,7 +232,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           { label: "Direction et gouvernance", href: "/leadership" },
         ] },
         { label: "Programmes", href: "/programs", children: [
-          { label: "Tous les programmes", href: "/programs" },
+          { label: "Tous les programmes", href: "/programs", kind: "overview" },
           { label: "Préparation linguistique", href: "/programs/language-preparation" }, { label: "Parcours universitaire", href: "/programs/university-pathway" }, { label: "Formation préparatoire", href: "/programs/academic-foundation" },
           { label: "Français des affaires HEC", href: "/programs/business-french-hec" },
           { label: "Baccalauréats HEC", href: "/programs/hec-bachelors" },
@@ -370,7 +370,7 @@ export const siteContent: Record<Locale, SiteContent> = {
           { label: "领导与治理", href: "/leadership" },
         ] },
         { label: "课程项目", href: "/programs", children: [
-          { label: "全部课程", href: "/programs" },
+          { label: "全部课程", href: "/programs", kind: "overview" },
           { label: "语言准备课程", href: "/programs/language-preparation" }, { label: "大学衔接课程", href: "/programs/university-pathway" }, { label: "学术基础课程", href: "/programs/academic-foundation" },
           { label: "HEC 商务法语", href: "/programs/business-french-hec" },
           { label: "HEC 本科项目", href: "/programs/hec-bachelors" },

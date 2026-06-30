@@ -70,7 +70,7 @@ export function UniversityPathwayPage({ locale, chrome }: { locale: Locale; chro
         </section>
 
         <section className="upFinalCta">
-          <div className="shell"><Reveal><p className="sectionLabel">{page.cta.label}</p><h2>{page.cta.title}</h2><p>{page.cta.description}</p><div className="upCtaActions"><Link className="button lightButton" href={`/${locale}/apply`}>{page.cta.actions[0]}<span>↗</span></Link><a className="textLink" href="mailto:admissions@UDEMIC.ca">{page.cta.actions[1]}<span>→</span></a><Link className="textLink" href={`/${locale}/contact`}>{page.cta.actions[2]}<span>→</span></Link></div></Reveal></div>
+          <div className="shell"><Reveal><p className="sectionLabel">{page.cta.label}</p><h2>{page.cta.title}</h2><p>{page.cta.description}</p><div className="upCtaActions"><Link className="button lightButton" href={`/${locale}/apply`}>{page.cta.actions[0]}<span>↗</span></Link><a className="textLink" href="mailto:info@Montrealic.ca">{page.cta.actions[1]}<span>→</span></a><Link className="textLink" href={`/${locale}/contact`}>{page.cta.actions[2]}<span>→</span></Link></div></Reveal></div>
         </section>
       </main>
       <SiteFooter content={chrome.footer} locale={locale} />

@@ -20,7 +20,6 @@ export function SiteHeader({ locale, content }: { locale: Locale; content: SiteC
     segments[1] = nextLocale;
     return segments.join("/") || `/${nextLocale}`;
   };
-
   return (
     <header className="siteHeader">
       <div className="utilityBar">
@@ -55,7 +54,14 @@ export function SiteHeader({ locale, content }: { locale: Locale; content: SiteC
               <div className="navDropdownPanel">
                 <p>{item.label}</p>
                 {item.children.map((child, index) => (
-                  <a href={localize(child.href)} key={child.label}><span>0{index + 1}</span>{child.label}</a>
+                  <a
+                    className={child.kind === "overview" ? "navDropdownOverview" : item.children?.some((entry) => entry.kind === "overview") ? "navDropdownSubLink" : undefined}
+                    href={localize(child.href)}
+                    key={child.label}
+                  >
+                    {!item.children?.some((entry) => entry.kind === "overview") && <span>0{index + 1}</span>}
+                    {child.label}
+                  </a>
                 ))}
               </div>
             </details>
@@ -79,7 +85,16 @@ export function SiteHeader({ locale, content }: { locale: Locale; content: SiteC
           {content.navigation.map((item, index) => (
             <div className="mobileMenuGroup" key={item.label}>
               <a href={localize(item.href)} onClick={() => setMenuOpen(false)}><span>0{index + 1}</span>{item.label}</a>
-              {item.children?.map((child) => <a className="mobileSubLink" href={localize(child.href)} key={child.label} onClick={() => setMenuOpen(false)}>{child.label}</a>)}
+              {item.children?.map((child) => (
+                <a
+                  className={`mobileSubLink${child.kind === "overview" ? " mobileSubLinkOverview" : item.children?.some((entry) => entry.kind === "overview") ? " mobileSubLinkNested" : ""}`}
+                  href={localize(child.href)}
+                  key={child.label}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {child.label}
+                </a>
+              ))}
             </div>
           ))}
         </nav>

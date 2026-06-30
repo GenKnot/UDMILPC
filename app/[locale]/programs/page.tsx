@@ -38,7 +38,7 @@ export default async function ProgramsPage({ params }: Props) {
       <DocumentLanguage lang={chrome.htmlLang} />
       <SiteHeader locale={locale} content={chrome.header} />
       <main>
-        <PageHero eyebrow={content.overview.eyebrow} title={content.overview.title} description={content.overview.description}>
+        <PageHero className="programsOverviewHero" eyebrow={content.overview.eyebrow} title={content.overview.title} description={content.overview.description}>
           <Breadcrumb items={[{ label: content.labels.home, href: `/${locale}` }, { label: content.labels.programs }]} />
         </PageHero>
 
