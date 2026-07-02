@@ -25,6 +25,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: copy.metadataTitle,
     description: copy.metadataDescription,
     alternates: { canonical: `/${locale}/apply`, languages: { en: "/en/apply", fr: "/fr/apply" } },
+    openGraph: {
+      title: copy.metadataTitle,
+      description: copy.metadataDescription,
+      url: `/${locale}/apply`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: copy.metadataTitle }],
+    },
   };
 }
 

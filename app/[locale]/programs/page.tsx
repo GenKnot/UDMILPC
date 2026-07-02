@@ -23,7 +23,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const content = programContent[locale];
-  return { title: content.overview.metadataTitle, description: content.overview.description };
+  return {
+    title: content.overview.metadataTitle,
+    description: content.overview.description,
+    openGraph: {
+      title: content.overview.metadataTitle,
+      description: content.overview.description,
+      url: `/${locale}/programs`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: content.overview.metadataTitle }],
+    },
+  };
 }
 
 export default async function ProgramsPage({ params }: Props) {

@@ -41,6 +41,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/${locale}/${section}`,
       languages: { en: `/en/${section}`, fr: `/fr/${section}` },
     },
+    openGraph: {
+      title: page.metadataTitle,
+      description: page.metadataDescription,
+      url: `/${locale}/${section}`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: page.metadataTitle }],
+    },
   };
 }
 

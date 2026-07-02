@@ -29,7 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!isLocale(locale) || !isProgramSlug(slug)) return {};
   const program = programContent[locale].programs[slug];
-  return { title: `${program.title} | ${siteContent[locale].metadata.title}`, description: program.description };
+  const title = `${program.title} | ${siteContent[locale].metadata.title}`;
+  return {
+    title,
+    description: program.description,
+    openGraph: {
+      title,
+      description: program.description,
+      url: `/${locale}/programs/${slug}`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: title }],
+    },
+  };
 }
 
 export default async function ProgramDetailPage({ params }: Props) {

@@ -63,6 +63,12 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
     title: metadata.title,
     description: metadata.description,
     alternates: { canonical: `/${locale}`, languages: { en: "/en", fr: "/fr" } },
+    openGraph: {
+      title: metadata.title,
+      description: metadata.description,
+      url: `/${locale}`,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: metadata.title }],
+    },
   };
 }
 

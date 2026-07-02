@@ -61,7 +61,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     htmlLang: "en",
     metadata: {
       title: "Collège International Montréal",
-      description: "Language, academic foundation, and university pathway programs in Montréal.",
+      description: "Study in Montréal at Collège International Montréal — offering language preparation, academic foundation, and university pathway programs on the Université de Montréal campus.",
     },
     header: {
       location: "UdeM Brossard Campus",
@@ -220,7 +220,7 @@ export const siteContent: Record<Locale, SiteContent> = {
   },
   fr: {
     htmlLang: "fr",
-    metadata: { title: "Collège International Montréal", description: "Programmes de langues, de formation préparatoire et de parcours universitaire à Montréal." },
+    metadata: { title: "Collège International Montréal", description: "Étudiez à Montréal au Collège International Montréal — programmes de langues, de formation préparatoire et de parcours universitaire sur le campus de l'Université de Montréal." },
     header: {
       location: "Campus UdeM de Brossard", brandName: "Centre international UdeM", brandMeta: "Langues · Études · Parcours",
       homeLabel: "Accueil du Collège International Montréal", navigationLabel: "Navigation principale", menuLabel: "Ouvrir le menu", closeLabel: "Fermer le menu",
@@ -358,7 +358,7 @@ export const siteContent: Record<Locale, SiteContent> = {
   },
   zh: {
     htmlLang: "zh-Hans",
-    metadata: { title: "蒙特利尔国际学院", description: "面向国际学生的语言提升、学术基础与大学衔接课程。" },
+    metadata: { title: "蒙特利尔国际学院", description: "蒙特利尔国际学院坐落于蒙特利尔大学 Brossard 校区，为国际学生提供法语语言强化、学术基础衔接及大学升学路径课程，助力学生顺利进入魁北克顶尖大学。" },
     header: {
       location: "蒙大 Brossard 校区", brandName: "蒙大国际语言与衔接中心", brandMeta: "语言 · 学术 · 升学路径",
       homeLabel: "蒙特利尔国际学院首页", navigationLabel: "主导航", menuLabel: "打开菜单", closeLabel: "关闭菜单",
